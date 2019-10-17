@@ -17,22 +17,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yv6-I6-eh7">
-                                <rect key="frame" x="141.5" y="423" width="131" height="50"/>
+                                <rect key="frame" x="82" y="403" width="250" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.35025149830000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="XzL-nI-IQe"/>
                                     <constraint firstAttribute="height" constant="50" id="a3u-tQ-nRY"/>
                                 </constraints>
-                                <state key="normal" title="Efetuar pagamento"/>
+                                <state key="normal" title="Pagamento endereço default">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HfD-jP-7Im">
+                                <rect key="frame" x="82" y="473" width="250" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="37L-H9-IDI"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="Sgw-rM-Lzi"/>
+                                </constraints>
+                                <state key="normal" title="Pagamento endereço custom">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="yv6-I6-eh7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6dr-gX-Y3d"/>
-                            <constraint firstItem="yv6-I6-eh7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="SJF-tW-vfx"/>
+                            <constraint firstItem="HfD-jP-7Im" firstAttribute="top" secondItem="yv6-I6-eh7" secondAttribute="bottom" constant="20" id="CkN-s7-oPQ"/>
+                            <constraint firstItem="yv6-I6-eh7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-20" id="SJF-tW-vfx"/>
+                            <constraint firstItem="HfD-jP-7Im" firstAttribute="centerX" secondItem="yv6-I6-eh7" secondAttribute="centerX" id="hXy-KA-eF1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="btnPay" destination="yv6-I6-eh7" id="i20-A3-qXp"/>
+                        <outlet property="btnPayAddress" destination="HfD-jP-7Im" id="S2I-91-1r5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

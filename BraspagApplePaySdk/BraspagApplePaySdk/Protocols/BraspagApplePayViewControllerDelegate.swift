@@ -8,8 +8,8 @@
 
 import UIKit
 
-@objc public protocol BraspagViewControllerProtocol {
+@objc public protocol BraspagApplePayViewControllerDelegate {
     func displayAlert(title: String, message: String)
-    func presentPayment(viewController: UIViewController)
-    func dismissPayment()
+    func presentAuthorizationViewController(viewController: UIViewController)
+    func dismissPaymentAuthorizationViewController()
 }

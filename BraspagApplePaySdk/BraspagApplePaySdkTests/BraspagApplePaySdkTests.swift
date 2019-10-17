@@ -7,28 +7,70 @@
 //
 
 import XCTest
+import PassKit
 @testable import BraspagApplePaySdk
 
 class BraspagApplePaySdkTests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var pay: BraspagApplePayProtocol!
+    var showAuthorizationViewController: Bool = false
+    var displayError: Bool = false
+ 
+    fileprivate func createInstance() {
+        pay = BraspagApplePaySpy.createInstance(currencyCode: "BRL",
+                                                countryCode: "BR",
+                                                merchantId: "merchant.com.jnazario.digital-jef",
+                                                viewDelegate: self)
+    }
+    
+    func testInstantiateSdkSuccessful() {
+        createInstance()
+        XCTAssertNotNil(pay)
+    }
+    
+    func testInstantiateSdkNil() {
+        XCTAssertNil(pay)
+    }
+    
+    func testMakePaymentSuccessfulWithoutContactInfo() {
+        createInstance()
+        pay.makePayment(itemDescription: Products.successfulWithoutContactInfo.rawValue, amount: 1500, contactInfo: nil)
+        
+        XCTAssertTrue(showAuthorizationViewController)
+    }
+    
+    func testMakePaymentWithoutContactInfoAndForbiddenPaymentNetworks() {
+        createInstance()
+        pay.makePayment(itemDescription: Products.forbiddenPaymentNetworks.rawValue, amount: 2500, contactInfo: nil)
+        
+        XCTAssertTrue(displayError)
+    }
+    
+    func testMakePaymentWithoutContactInfoAndAllowedPaymentNetworks() {
+        createInstance()
+        pay.makePayment(itemDescription: Products.allowedPaymentNetworks.rawValue, amount: 2500, contactInfo: nil)
+        
+        XCTAssertTrue(showAuthorizationViewController)
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+//    func testPerformanceExample() {
+//        // This is an example of a performance test case.
+//        self.measure {
+//            // Put the code you want to measure the time of here.
+//        }
+//    }
+}
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+extension BraspagApplePaySdkTests: BraspagApplePayViewControllerDelegate {
+    func displayAlert(title: String, message: String) {
+        displayError = title == "Error"
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func presentAuthorizationViewController(viewController: UIViewController) {
+        showAuthorizationViewController = true
     }
-
+    
+    func dismissPaymentAuthorizationViewController() {
+        print(#function)
+    }
 }

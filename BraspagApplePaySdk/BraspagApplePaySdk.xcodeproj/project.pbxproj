@@ -16,9 +16,16 @@
 		68399945234046040027BAFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68399944234046040027BAFB /* Assets.xcassets */; };
 		68399948234046040027BAFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68399946234046040027BAFB /* LaunchScreen.storyboard */; };
 		68399953234046050027BAFB /* BraspagApplePayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68399952234046050027BAFB /* BraspagApplePayTests.swift */; };
-		6839995D23410DE30027BAFB /* BraspagPay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6839995C23410DE30027BAFB /* BraspagPay.swift */; };
-		68399963234118EA0027BAFB /* BraspagPayProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68399962234118EA0027BAFB /* BraspagPayProtocol.swift */; };
-		683999652341190C0027BAFB /* BraspagViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683999642341190C0027BAFB /* BraspagViewControllerProtocol.swift */; };
+		6839995D23410DE30027BAFB /* BraspagApplePay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6839995C23410DE30027BAFB /* BraspagApplePay.swift */; };
+		68399963234118EA0027BAFB /* BraspagApplePayProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68399962234118EA0027BAFB /* BraspagApplePayProtocol.swift */; };
+		683999652341190C0027BAFB /* BraspagApplePayViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683999642341190C0027BAFB /* BraspagApplePayViewControllerDelegate.swift */; };
+		687988652354731900519451 /* AcceptedPaymentNetworks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687988642354731800519451 /* AcceptedPaymentNetworks.swift */; };
+		687988692354869400519451 /* BraspagApplePaySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687988682354869400519451 /* BraspagApplePaySpy.swift */; };
+		6879886C235486F800519451 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6879886B235486F800519451 /* Products.swift */; };
+		68C069BD234DF533006623CF /* ContactInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C069BC234DF533006623CF /* ContactInfo.swift */; };
+		68C069C0234DF5B7006623CF /* AddressInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C069BF234DF5B7006623CF /* AddressInfo.swift */; };
+		68C069C2234DFE2F006623CF /* BraspagApplePaySdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6839991B2340455A0027BAFB /* BraspagApplePaySdk.framework */; };
+		68C069C3234DFE2F006623CF /* BraspagApplePaySdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6839991B2340455A0027BAFB /* BraspagApplePaySdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +43,28 @@
 			remoteGlobalIDString = 68399938234046020027BAFB;
 			remoteInfo = BraspagApplePay;
 		};
+		68C069C4234DFE2F006623CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 683999122340455A0027BAFB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6839991A2340455A0027BAFB;
+			remoteInfo = BraspagApplePaySdk;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		68C069C6234DFE2F006623CF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				68C069C3234DFE2F006623CF /* BraspagApplePaySdk.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6839991B2340455A0027BAFB /* BraspagApplePaySdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BraspagApplePaySdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,9 +84,14 @@
 		68399952234046050027BAFB /* BraspagApplePayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BraspagApplePayTests.swift; sourceTree = "<group>"; };
 		68399954234046050027BAFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6839995B234046D80027BAFB /* BraspagApplePay.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BraspagApplePay.entitlements; sourceTree = "<group>"; };
-		6839995C23410DE30027BAFB /* BraspagPay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BraspagPay.swift; sourceTree = "<group>"; };
-		68399962234118EA0027BAFB /* BraspagPayProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BraspagPayProtocol.swift; sourceTree = "<group>"; };
-		683999642341190C0027BAFB /* BraspagViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BraspagViewControllerProtocol.swift; sourceTree = "<group>"; };
+		6839995C23410DE30027BAFB /* BraspagApplePay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BraspagApplePay.swift; sourceTree = "<group>"; };
+		68399962234118EA0027BAFB /* BraspagApplePayProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BraspagApplePayProtocol.swift; sourceTree = "<group>"; };
+		683999642341190C0027BAFB /* BraspagApplePayViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BraspagApplePayViewControllerDelegate.swift; sourceTree = "<group>"; };
+		687988642354731800519451 /* AcceptedPaymentNetworks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptedPaymentNetworks.swift; sourceTree = "<group>"; };
+		687988682354869400519451 /* BraspagApplePaySpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BraspagApplePaySpy.swift; sourceTree = "<group>"; };
+		6879886B235486F800519451 /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
+		68C069BC234DF533006623CF /* ContactInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfo.swift; sourceTree = "<group>"; };
+		68C069BF234DF5B7006623CF /* AddressInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68C069C2234DFE2F006623CF /* BraspagApplePaySdk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +136,7 @@
 				6839993A234046020027BAFB /* BraspagApplePay */,
 				68399951234046050027BAFB /* BraspagApplePayTests */,
 				6839991C2340455A0027BAFB /* Products */,
+				68C069C1234DFE2F006623CF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,10 +154,12 @@
 		6839991D2340455A0027BAFB /* BraspagApplePaySdk */ = {
 			isa = PBXGroup;
 			children = (
+				68C069BB234DF47C006623CF /* Domain */,
 				68399961234118DB0027BAFB /* Protocols */,
 				6839991E2340455A0027BAFB /* BraspagApplePaySdk.h */,
 				6839991F2340455A0027BAFB /* Info.plist */,
-				6839995C23410DE30027BAFB /* BraspagPay.swift */,
+				6839995C23410DE30027BAFB /* BraspagApplePay.swift */,
+				687988642354731800519451 /* AcceptedPaymentNetworks.swift */,
 			);
 			path = BraspagApplePaySdk;
 			sourceTree = "<group>";
@@ -130,6 +167,8 @@
 		683999282340455A0027BAFB /* BraspagApplePaySdkTests */ = {
 			isa = PBXGroup;
 			children = (
+				6879886A235486E000519451 /* Domain */,
+				687988672354866D00519451 /* Spies */,
 				683999292340455A0027BAFB /* BraspagApplePaySdkTests.swift */,
 				6839992B2340455A0027BAFB /* Info.plist */,
 			);
@@ -162,10 +201,42 @@
 		68399961234118DB0027BAFB /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				68399962234118EA0027BAFB /* BraspagPayProtocol.swift */,
-				683999642341190C0027BAFB /* BraspagViewControllerProtocol.swift */,
+				68399962234118EA0027BAFB /* BraspagApplePayProtocol.swift */,
+				683999642341190C0027BAFB /* BraspagApplePayViewControllerDelegate.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		687988672354866D00519451 /* Spies */ = {
+			isa = PBXGroup;
+			children = (
+				687988682354869400519451 /* BraspagApplePaySpy.swift */,
+			);
+			path = Spies;
+			sourceTree = "<group>";
+		};
+		6879886A235486E000519451 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				6879886B235486F800519451 /* Products.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		68C069BB234DF47C006623CF /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				68C069BC234DF533006623CF /* ContactInfo.swift */,
+				68C069BF234DF5B7006623CF /* AddressInfo.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		68C069C1234DFE2F006623CF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,10 +298,12 @@
 				68399936234046020027BAFB /* Frameworks */,
 				68399937234046020027BAFB /* Resources */,
 				68399960234117EE0027BAFB /* ShellScript */,
+				68C069C6234DFE2F006623CF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				68C069C5234DFE2F006623CF /* PBXTargetDependency */,
 			);
 			name = BraspagApplePay;
 			productName = BraspagApplePay;
@@ -378,9 +451,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				683999652341190C0027BAFB /* BraspagViewControllerProtocol.swift in Sources */,
-				6839995D23410DE30027BAFB /* BraspagPay.swift in Sources */,
-				68399963234118EA0027BAFB /* BraspagPayProtocol.swift in Sources */,
+				68C069BD234DF533006623CF /* ContactInfo.swift in Sources */,
+				683999652341190C0027BAFB /* BraspagApplePayViewControllerDelegate.swift in Sources */,
+				687988652354731900519451 /* AcceptedPaymentNetworks.swift in Sources */,
+				68C069C0234DF5B7006623CF /* AddressInfo.swift in Sources */,
+				6839995D23410DE30027BAFB /* BraspagApplePay.swift in Sources */,
+				68399963234118EA0027BAFB /* BraspagApplePayProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,7 +464,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6879886C235486F800519451 /* Products.swift in Sources */,
 				6839992A2340455A0027BAFB /* BraspagApplePaySdkTests.swift in Sources */,
+				687988692354869400519451 /* BraspagApplePaySpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +499,11 @@
 			isa = PBXTargetDependency;
 			target = 68399938234046020027BAFB /* BraspagApplePay */;
 			targetProxy = 6839994F234046050027BAFB /* PBXContainerItemProxy */;
+		};
+		68C069C5234DFE2F006623CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6839991A2340455A0027BAFB /* BraspagApplePaySdk */;
+			targetProxy = 68C069C4234DFE2F006623CF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

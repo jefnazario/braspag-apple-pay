@@ -13,25 +13,42 @@ import BraspagApplePaySdk
 class ViewController: UIViewController {
     
     @IBOutlet weak var btnPay: UIButton!
+    @IBOutlet weak var btnPayAddress: UIButton!
     
-    var pay: BraspagPayProtocol!
+    var pay: BraspagApplePayProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        pay = BraspagPay.createInstance(currencyCode: "BRL",
-                                        countryCode: "BR",
-                                        merchantId: "merchant.com.jnazario.digital-jef",
-                                        viewDelegate: self)
+        pay = BraspagApplePay.createInstance(merchantId: "merchant.com.jnazario.digital-jef",
+                                             viewDelegate: self)
         
-        btnPay.addTarget(self, action: #selector(makePayment), for: .touchUpInside)
+        btnPay.addTarget(self,
+                         action: #selector(makePaymentWithDefaultContactAddress),
+                         for: .touchUpInside)
+        
+        btnPayAddress.addTarget(self,
+                                action: #selector(makePaymentWithRequiredBillingShippingAddress),
+                                for: .touchUpInside)
     }
     
-    @objc func makePayment(_ sender: UIButton) {
-        pay.makePayment(itemDescription: "Meu produto", amount: 150.30)
+    @objc func makePaymentWithDefaultContactAddress(_ sender: UIButton) {
+        pay.makePayment(itemDescription: "Meu produto", amount: 150.30, contactInfo: nil)
+    }
+    
+    @objc func makePaymentWithRequiredBillingShippingAddress(_ sender: UIButton) {
+        
+        let billingAddress = AddressInfo(street: "Rua A", city: "Cidade A", state: "Estado A", postalCode: "29100000")
+        let contact = ContactInfo(firstName: "Jeferson",
+                                  lastName: "F Nazario",
+                                  email: "jeferson@teste.com",
+                                  phoneNumber: "987654321",
+                                  billingAddress: billingAddress)
+        
+        pay.makePayment(itemDescription: "Meu produto com endereço", amount: 2000, contactInfo: contact)
     }
 }
 
-extension ViewController: BraspagViewControllerProtocol {
+extension ViewController: BraspagApplePayViewControllerDelegate {
     func displayAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
@@ -39,11 +56,11 @@ extension ViewController: BraspagViewControllerProtocol {
         present(alert, animated: true)
     }
     
-    func presentPayment(viewController: UIViewController) {
+    func presentAuthorizationViewController(viewController: UIViewController) {
         present(viewController, animated: true, completion: nil)
     }
     
-    func dismissPayment() {
+    func dismissPaymentAuthorizationViewController() {
         dismiss(animated: true, completion: nil)
     }
 }

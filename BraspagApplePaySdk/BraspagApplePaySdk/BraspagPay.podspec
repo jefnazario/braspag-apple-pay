@@ -2,9 +2,9 @@
 Pod::Spec.new do |s|
 
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  s.name         = "BraspagPay"
-  s.version      = "0.0.1"
-  s.summary      = "BraspagPay is the easiest way to get Apple Pay into your app."
+  s.name         = "BraspagApplePay"
+  s.version      = "1.0.0"
+  s.summary      = "BraspagApplePay is the easiest way to get Apple Pay into your app."
   s.description  = <<-DESC
                     The easiest way to get Apple Pay into your app 💳. That library will keep you focused at only the right things.
                    DESC

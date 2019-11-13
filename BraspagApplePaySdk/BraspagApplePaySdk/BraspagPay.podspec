@@ -8,14 +8,14 @@ Pod::Spec.new do |s|
   s.description  = <<-DESC
                     The easiest way to get Apple Pay into your app 💳. That library will keep you focused at only the right things.
                    DESC
-  s.homepage     = "https://github.com/BraspagDevelopers/braspag-apple-pay"
+  s.homepage     = "https://github.com/Braspag/braspag-apple-pay"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
   s.license      = { :type => "MIT" }
   s.author             = { "Jeferson F. Nazario" => "jefnazario@gmail.com" }
   s.social_media_url   = "http://twitter.com/jefnazario"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  s.source       = { :git => "https://github.com/BraspagDevelopers/braspag-apple-pay.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/Braspag/braspag-apple-pay.git", :tag => "#{s.version}" }
   s.ios.deployment_target = '11.0'
 
 

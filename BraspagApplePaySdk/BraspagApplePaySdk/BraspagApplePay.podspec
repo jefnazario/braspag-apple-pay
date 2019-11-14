@@ -20,6 +20,6 @@ Pod::Spec.new do |s|
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  s.source_files  = "Classes", "${POD_NAME}/Classes/**/*.{h,m}"
-  s.exclude_files = "Classes/Exclude"
+  s.source_files  = "${POD_NAME}/*.swift"
+# s.exclude_files = "Classes/Exclude"
 end

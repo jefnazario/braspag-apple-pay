@@ -1,5 +1,5 @@
 # Braspag Apple Pay SDK
-
+ 
 ## Requisitos
 
 - iOS 10.0+ / macOS 10.13+ / watchOS 4.0+

@@ -147,4 +147,4 @@ let contact = ContactInfo(firstName: "Comprador",
 braspagApplePay.makePayment(itemDescription: "Meu produto", amount: 2000, contactInfo: contact)
 ```
 
-Após estes passos, o pagamento será processado e o retorno será recebido no método delegate `displayAlert`.
+Após estes passos, o pagamento será processado e o retorno será recebido no método delegate `displayAlert`!
